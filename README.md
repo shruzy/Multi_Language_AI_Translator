@@ -13,28 +13,28 @@ The goal of this project is to demonstrate a practical implementation of multili
 ## Key Features
 
 Voice Recording
-Users can record audio directly from the browser interface.
+-> Users can record audio directly from the browser interface.
 
 Speech-to-Text
-Recorded audio is converted into text using speech recognition.
+-> Recorded audio is converted into text using speech recognition.
 
 Automatic Language Detection
-The system detects the language of the spoken input automatically.
+-> The system detects the language of the spoken input automatically.
 
 Command Parsing
-The application detects instructions such as “convert this into Hindi” and determines the target language.
+-> The application detects instructions such as “convert this into Hindi” and determines the target language.
 
 Text Translation
-The recognized sentence is translated into the selected target language.
+-> The recognized sentence is translated into the selected target language.
 
 Text-to-Speech Output
-The translated text is converted back into speech so users can hear the result.
+-> The translated text is converted back into speech so users can hear the result.
 
 Chat Interface
-The UI displays both the user input and the translated response in a conversational format.
+-> The UI displays both the user input and the translated response in a conversational format.
 
 Real-Time Processing
-The full pipeline executes quickly, allowing near real-time voice translation.
+-> The full pipeline executes quickly, allowing near real-time voice translation.
 
 ---
 
@@ -158,31 +158,31 @@ Multi_Language_AI_Translator
 ### File Descriptions
 
 **streamlit_app.py**
-Main application entry point containing the Streamlit UI and workflow pipeline.
+-> Main application entry point containing the Streamlit UI and workflow pipeline.
 
 **config.py**
-Stores configuration variables such as directory paths and system settings.
+-> Stores configuration variables such as directory paths and system settings.
 
 **modules/speech_to_text.py**
-Handles conversion of recorded audio into text.
+-> Handles conversion of recorded audio into text.
 
 **modules/language_detector.py**
-Detects the language of the recognized text.
+-> Detects the language of the recognized text.
 
 **modules/command_parser.py**
-Extracts translation commands and target languages from user input.
+-> Extracts translation commands and target languages from user input.
 
 **modules/translator.py**
-Handles text translation using the translation service.
+-> -> Handles text translation using the translation service.
 
 **modules/text_to_speech.py**
-Converts translated text into synthesized speech.
+-> Converts translated text into synthesized speech.
 
 **audio_input/**
-Temporary storage for recorded audio files.
+-> Temporary storage for recorded audio files.
 
 **audio_output/**
-Stores generated translated speech audio.
+-> Stores generated translated speech audio.
 
 ---
 
@@ -291,3 +291,4 @@ This project is licensed under the MIT License.
 ## Acknowledgments
 
 This project utilizes several open-source technologies including Streamlit, SpeechRecognition, Googletrans, gTTS, and Langdetect that make rapid development of AI-powered applications possible.
+
