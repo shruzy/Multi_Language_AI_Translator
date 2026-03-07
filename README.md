@@ -47,7 +47,7 @@ Get Results: Receive both translated text and audio output
 Clone the repository:
 
 bash
-git clone https://github.com/yourusername/ai-voice-translator.git
+git clone https://github.com/shruzy/Multi_Language_AI_Translator.git
 cd ai-voice-translator
 Install dependencies:
 
@@ -125,3 +125,4 @@ Google Text-to-Speech for audio generation
 
 📧 Contact
 For any queries or suggestions, please open an issue on GitHub or contact the maintainer.
+
