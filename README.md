@@ -1,128 +1,293 @@
-﻿# Multi_Language_AI_Translator
-🎤 AI Voice Translator
-A powerful multi-language voice translation application built with Streamlit. This app allows users to speak in one language and get instant voice translations in multiple Indian and international languages.
+# Multi Language AI Voice Translator
 
-🌟 Features
-Voice Recording: Record audio directly in the browser
+## Overview
 
-Speech-to-Text: Convert spoken words to text using speech recognition
+Multi Language AI Voice Translator is a voice-driven translation application built using Python and Streamlit. The system allows users to speak a sentence in one language and receive an instant translation in another language along with synthesized speech output.
 
-Multi-Language Support: Translate between 11 different languages
+The application provides an interactive chat-style interface where voice input is processed through a pipeline consisting of speech recognition, language detection, command parsing, translation, and text-to-speech generation.
 
-Text-to-Speech: Hear the translated text in the target language
+The goal of this project is to demonstrate a practical implementation of multilingual voice interaction using widely available open-source tools.
 
-Chat Interface: Clean chat-like UI for easy interaction
+---
 
-Real-time Processing: Fast and efficient translation pipeline
+## Key Features
 
-🗣️ Supported Languages
-Language	Code
-English	en
-Hindi	hi
-Marathi	mr
-Tamil	ta
-Telugu	te
-Kannada	kn
-Bengali	bn
-Gujarati	gu
-Punjabi	pa
-Malayalam	ml
-Urdu	ur
-🚀 How It Works
-Record Voice: Click the "Record" button and speak your message
+Voice Recording
+Users can record audio directly from the browser interface.
 
-Automatic Processing: The app automatically:
+Speech-to-Text
+Recorded audio is converted into text using speech recognition.
 
-Converts speech to text
+Automatic Language Detection
+The system detects the language of the spoken input automatically.
 
-Detects the input language
+Command Parsing
+The application detects instructions such as “convert this into Hindi” and determines the target language.
 
-Parses any language commands
+Text Translation
+The recognized sentence is translated into the selected target language.
 
-Translates to the target language
+Text-to-Speech Output
+The translated text is converted back into speech so users can hear the result.
 
-Get Results: Receive both translated text and audio output
+Chat Interface
+The UI displays both the user input and the translated response in a conversational format.
 
-🛠️ Installation
-Clone the repository:
+Real-Time Processing
+The full pipeline executes quickly, allowing near real-time voice translation.
 
-bash
+---
+
+## Supported Languages
+
+| Language  | Code |
+| --------- | ---- |
+| English   | en   |
+| Hindi     | hi   |
+| Marathi   | mr   |
+| Tamil     | ta   |
+| Telugu    | te   |
+| Kannada   | kn   |
+| Bengali   | bn   |
+| Gujarati  | gu   |
+| Punjabi   | pa   |
+| Malayalam | ml   |
+| Urdu      | ur   |
+
+These languages were selected based on compatibility with the text-to-speech engine used in the project.
+
+---
+
+## System Architecture
+
+The application follows a modular pipeline where each stage processes the output of the previous stage.
+
+```
+User
+ │
+ │  (Voice Input)
+ ▼
+Browser Audio Recorder
+ │
+ ▼
+Speech Recognition Module
+ │
+ │  Converts audio → text
+ ▼
+Language Detection
+ │
+ │  Identifies spoken language
+ ▼
+Command Parser
+ │
+ │  Extracts target language
+ │  Removes command phrases
+ ▼
+Translation Engine
+ │
+ │  Translates text to target language
+ ▼
+Text-to-Speech Engine
+ │
+ │  Converts translated text → speech
+ ▼
+Streamlit Interface
+ │
+ │  Displays:
+ │  - Recorded Audio
+ │  - Recognized Text
+ │  - Translated Text
+ │  - Translated Audio
+ ▼
+User Output
+```
+
+This pipeline allows the application to remain modular and easy to maintain.
+
+---
+
+## Installation
+
+### Clone the Repository
+
+```bash
 git clone https://github.com/shruzy/Multi_Language_AI_Translator.git
-cd ai-voice-translator
-Install dependencies:
+cd Multi_Language_AI_Translator
+```
 
-bash
+### Install Dependencies
+
+```bash
 pip install -r requirements.txt
-Set up configuration:
+```
 
-Create necessary directories (if not自动 created)
+### Run the Application
 
-Configure API keys in config.py if needed
-
-📦 Dependencies
-streamlit
-
-audiorecorder
-
-speech_recognition
-
-googletrans==4.0.0-rc1
-
-gTTS
-
-langdetect
-
-pydub
-
-Other dependencies listed in requirements.txt
-
-🎯 Usage
-Run the application:
-
-bash
+```bash
 streamlit run streamlit_app.py
-Open your browser and go to http://localhost:8501
+```
 
-Click the "Record" button and speak your message (e.g., "my name is Ritesh Shukla convert this into Hindi")
+After running the command, open a browser and navigate to:
 
-View the translation results in both text and audio format
+```
+http://localhost:8501
+```
 
-📁 Project Structure
-text
-ai-voice-translator/
-├── streamlit_app.py          # Main application file
-├── config.py                  # Configuration settings
-├── requirements.txt           # Python dependencies
-├── modules/
-│   ├── speech_to_text.py     # Speech recognition module
-│   ├── language_detector.py   # Language detection
-│   ├── command_parser.py      # Command parsing logic
-│   ├── translator.py          # Translation module
-│   └── text_to_speech.py      # Text-to-speech conversion
-├── audio_input/               # Directory for input audio
-└── audio_output/              # Directory for output audio
-💡 Usage Examples
-"Hello, how are you? translate to Hindi"
+---
 
-"मेरा नाम रितेश है convert this into English"
+## Project Structure
 
-"Good morning convert this into Tamil"
+```
+Multi_Language_AI_Translator
+│
+├── streamlit_app.py
+├── config.py
+├── requirements.txt
+│
+├── modules
+│   ├── speech_to_text.py
+│   ├── language_detector.py
+│   ├── command_parser.py
+│   ├── translator.py
+│   └── text_to_speech.py
+│
+├── audio_input
+└── audio_output
+```
 
-"What is your name? translate to Bengali"
+### File Descriptions
 
-🤝 Contributing
-Contributions are welcome! Please feel free to submit a Pull Request.
+**streamlit_app.py**
+Main application entry point containing the Streamlit UI and workflow pipeline.
 
-📝 License
-This project is licensed under the MIT License - see the LICENSE file for details.
+**config.py**
+Stores configuration variables such as directory paths and system settings.
 
-🙏 Acknowledgments
-Streamlit for the amazing web framework
+**modules/speech_to_text.py**
+Handles conversion of recorded audio into text.
 
-Google Translate API for translation services
+**modules/language_detector.py**
+Detects the language of the recognized text.
 
-Google Text-to-Speech for audio generation
+**modules/command_parser.py**
+Extracts translation commands and target languages from user input.
 
-📧 Contact
-For any queries or suggestions, please open an issue on GitHub or contact the maintainer.
+**modules/translator.py**
+Handles text translation using the translation service.
 
+**modules/text_to_speech.py**
+Converts translated text into synthesized speech.
+
+**audio_input/**
+Temporary storage for recorded audio files.
+
+**audio_output/**
+Stores generated translated speech audio.
+
+---
+
+## Technologies and Libraries Used
+
+### Streamlit
+
+Used to build the interactive web interface. Streamlit enables rapid development of data-driven web applications directly in Python.
+
+### SpeechRecognition
+
+A Python library that converts spoken audio into text using speech recognition engines.
+
+### Googletrans
+
+A lightweight Python interface to Google Translate services that allows translation between many languages.
+
+### gTTS (Google Text-to-Speech)
+
+Generates speech audio from text, enabling users to hear the translated output.
+
+### Langdetect
+
+A language detection library used to identify the language of the spoken sentence automatically.
+
+### Audiorecorder
+
+Provides browser-based audio recording functionality within Streamlit applications.
+
+### Pydub
+
+Used for handling audio file processing and exporting audio recordings.
+
+---
+
+## Design Decisions and Development Challenges
+
+### Initial Plan
+
+The original design explored using more advanced language detection models such as FastText. These models provide high accuracy for multilingual tasks.
+
+### FastText Compatibility Issues
+
+During development, FastText caused installation and compatibility problems on local environments due to compilation dependencies. Because of these issues, the system switched to the lighter Langdetect library, which is easier to install and sufficient for this project.
+
+### Command Parsing Problem
+
+Initially, sentences such as:
+
+“my name is Ritesh convert this into Hindi”
+
+were translated including the command phrase.
+
+To solve this issue, a command parser module was implemented that removes instruction phrases before translation while still detecting the intended target language.
+
+### Text-to-Speech Limitations
+
+Some Indian languages are not supported by the text-to-speech engine used in the project. To maintain stability, only languages supported by the speech synthesis library were included in the final implementation.
+
+### User Interface Improvements
+
+The original UI displayed translation results in a simple layout. It was later redesigned into a chat-style interface to make the interaction more intuitive and easier for users.
+
+---
+
+## Example Usage
+
+Example voice commands supported by the system:
+
+```
+Hello how are you translate to Hindi
+My name is Ritesh convert this into Marathi
+Good morning convert this into Tamil
+What is your name translate to Bengali
+```
+
+The system extracts the actual sentence and translates it into the requested language.
+
+---
+
+## Future Improvements
+
+Potential future enhancements include:
+
+* Support for additional Indian languages
+* Integration with neural machine translation models
+* Higher quality speech synthesis engines
+* Improved speech recognition accuracy
+* Real-time conversation mode
+* Cloud deployment for public access
+
+---
+
+## Contributing
+
+Contributions are welcome. If you would like to improve the project, please fork the repository and submit a pull request.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+---
+
+## Acknowledgments
+
+This project utilizes several open-source technologies including Streamlit, SpeechRecognition, Googletrans, gTTS, and Langdetect that make rapid development of AI-powered applications possible.
