@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+<title>Multi Language AI Translator</title>
+
+<link rel="stylesheet" href="/static/css/style.css">
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Multi-Language AI Translator</h2>
+
+{% if output_text %}
+
+<div class="output-box">
+
+<p>{{output_text}}</p>
+
+</div>
+
+<audio controls>
+
+<source src="/static/audio_output/{{audio_file}}" type="audio/mpeg">
+
+</audio>
+
+{% endif %}
+
+<form method="POST" enctype="multipart/form-data">
+
+<div class="input-box">
+
+<input type="file" name="audio" accept="audio/*" required>
+
+<button type="submit">🎤 Upload & Translate</button>
+
+</div>
+
+</form>
+
+</div>
+
+</body>
+</html>

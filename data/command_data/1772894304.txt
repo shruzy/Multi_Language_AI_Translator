@@ -1,0 +1,4 @@
+
+Input Text: hi my name is Shruti Shukla in convert it into Kannada
+Input Language: en
+Output Language: kn
