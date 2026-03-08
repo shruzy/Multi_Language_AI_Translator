@@ -57,6 +57,9 @@ Real-Time Processing
 These languages were selected based on compatibility with the text-to-speech engine used in the project.
 
 ---
+## Initial Architecture
+
+---![WhatsApp Image 2026-03-08 at 18 00 07](https://github.com/user-attachments/assets/aacf084b-d56d-4d00-a298-17a5186da036)
 
 ## System Architecture
 
@@ -291,4 +294,5 @@ This project is licensed under the MIT License.
 ## Acknowledgments
 
 This project utilizes several open-source technologies including Streamlit, SpeechRecognition, Googletrans, gTTS, and Langdetect that make rapid development of AI-powered applications possible.
+
 
