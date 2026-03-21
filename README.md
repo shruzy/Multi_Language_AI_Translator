@@ -295,4 +295,10 @@ This project is licensed under the MIT License.
 
 This project utilizes several open-source technologies including Streamlit, SpeechRecognition, Googletrans, gTTS, and Langdetect that make rapid development of AI-powered applications possible.
 
+---
+
+## Streamlit
+
+https://docs.streamlit.io/get-started
+
 
